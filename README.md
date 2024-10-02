@@ -15,13 +15,18 @@ To run the tool on a personal laptop, one only needs to create the Conda environ
 
 1. 
 conda create -n YourENV python=3.6
+
 pip install flask
+
 pip install mysql-connector  ##This is for Cloud version
 
 
 or 
+
 pip install -r requirements.txt #using pip
+
 or
+
 conda create --name <env_name> --file requirements.txt
 
 ###########################################################################

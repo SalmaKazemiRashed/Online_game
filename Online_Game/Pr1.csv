@@ -1,0 +1,8 @@
+corrupted_image.png	Bad
+empty_field.png	Bad
+foreign_object.png	Bad
+0d0.png	Good
+0d1.png	Good
+clumpedcells.png	Bad
+non-oval.png	Bad
+out_of_focus.png	Bad

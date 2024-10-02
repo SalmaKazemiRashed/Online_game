@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    <!--other positioning attributes-->
+    }
+        .cat-images {
+        padding-left: 30px;
+        padding-top: 10px;
+        width : 70px;
+    <!--other positioning attributes-->
+    }
+    </style>
+    <ul>
+  <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+  <li><a href="{{ url_for('help_func') }}">Help</a></li>
+  <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+    <div class="white-box">
+    <h2 style = "color : black">Welcome to Cell Hunter!</h2>
+    <p style = "color : black" >Cell Hunter is a citizen science game that helps us build an artificial intelligence system for analysing microscopy images of healthy and dying cells (more info <a href="{{ url_for('info_func') }}">here</a>). We need your help to find out which genes and drugs regulate cell death in order to develop new treatments for a broad range of diseases such as cancer, infections, neurodegeneration, stroke, cardiac disease and many more.
+Find out <a href="{{ url_for('cell_info_func') }}">here</a> why cell death is required for the life of humans and other organisms and why changes in cell death cause so many different diseases. </p>
+        <h2 style = "color : black">Who can play this game?</h2>
+    <p style = "color : black" >
+Anyone who can see. Classifying cell images is not too difficult for humans but very tricky for artificial intelligence systems. Artificial intelligence systems need thousands of images to learn what even a child can spot. We also have ways of spotting errors, so don’t worry. You don’t need to be a researcher to play this game.</p>
+       <h2 style = "color : black">Why should I play?</h2>
+    <p style = "color : black" >
+First of all, it is fun and for some even relaxing. It is also a chance for you to contribute to meaningful research that could benefit millions of people in the end. And you will even learn something about cells and cell death in the process.
+You can also read more about the importance of cell death <a href="{{ url_for('cell_info_func') }}">here</a> and you can read more about our research group <a href="{{ url_for('us_info_func') }}">here.</a></p>
+       <h2 style = "color : black">How does it work?</h2>
+    <p style = "color : black" >
+Cell Hunter consists of several levels in which you label cell images so that we can teach our artificial intelligence system to rapidly interpret millions of images. One of the major things we are trying to detect is if and how a cell is dying. This is important because we want to find treatments that can modify cell death. Such treatments could benefit patients with many diseases: cancer, infections, neurodegeneration, stroke and cardiac disease and many others.
+In each level you have two alternative choices for each image. If you want to appear on the leader board you need to enter an alias (please don’t use your real name) but you can also play without this.</p>
+
+
+
+    <h2 style = "color : black">Game Levels</h2>
+        <nav>
+        <ul>
+            <li><a href="{{ url_for('l1_func') }}">Level1</a></li>
+            <li><a href = "{{ url_for('l2_func') }}">Level2</a></li>
+            <li><a href = "{{ url_for('l3_func') }}">Level3</a></li>
+             <li><a href = "{{ url_for('l4_func') }}">Level4</a></li>
+
+        </ul>
+        </nav>
+    </div>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    <!--other positioning attributes-->
+    }
+        .cat-images {
+        padding-left: 30px;
+        padding-top: 10px;
+        width : 70px;
+    <!--other positioning attributes-->
+    }
+    </style>
+    <ul>
+      <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+        <li><a href="{{ url_for('help_func') }}">Help</a></li>
+        <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+     <div class="white-box" style = "position:absolute; height:500px">   
+     
+        <button id="userNameButton"
+              style = "display: inline; font-family: serif; font-size: 12pt;  ;margin-top: 0px" >{{ ID }}</button>
+       
+
+      <canvas id="myCanvas" width = "400px" height="400px" style="margin-top:10px; height: 400px; amargin-right: 400px; border:10px solid whitesmoke;
+              ;display:none" src="{{image_src}}"></canvas>
+
+
+    <canvas id="origCanvas" width = "400px" height="400px" style="margin-top:5px;  margin-right: 400px; border:10px solid blue;
+              ;display:none;"></canvas>
+
+    <img id="myImage" width = "400px" height="400px" style="margin-top:10px; height: 400px; margin-right: 400px; border:10px solid whitesmoke;
+              ;display:block;position:absolute; z-index:auto" name = "load_image" src = {{image_src}}>
+
+    <img id="myImage" width = "4px" height="4px" style="margin-top:208px; margin-left:208px;height: 4px; margin-right: 400px; border:0px solid whitesmoke;
+              ;display:block;position:absolute; z-index:2" name = "load_image" src = '/static/img/red.png'>
+
+     <form method="POST"  style = "margin-top:100px; margin-left:300px; display:inline; font-family: serif; font-size: 18pt;z-index : 20;position:absolute; "  >
+         <input type="checkbox" name="labelButton" value="Normal" title="If you see a completely normal image choose this.">Normal</br>
+         <input type="checkbox" name="labelButton" value="Blurry" title="If you find some bluriness in the image, choose this.">Blurry</br>
+		 <input type="checkbox" name="labelButton" value="Foreign_object" title="If you could see some foreign objects in the image (e.g., bubble), choose this">Foreign object</br>
+ 		 <input type="checkbox" name="labelButton" value="Empty" title="If you can not see any object in the image specifically the center of the image looks empty, choose this.">Empty</br>
+ 		 <input type="checkbox" name="labelButton" value="Shadow" title="If you could see some kind of shadow in some of part of the image, choose this.">Shadow</br>
+		 <input type="checkbox" name="labelButton" value="Corrupted" title="If you could find the whole image or part of it corrupted or ruined, choose this.">Corrupted</br>
+		 <input type="checkbox" name="labelButton" value="Other" title="If you find some sort of problem in image and it is not in any of the above categories, choose this.">Other</br>	
+    
+
+
+     
+     <Button name = "P1Button" type="submit" id="P1Button" value='Save'
+               style = "border-left: 100px; display:inline; font-family: serif; font-size: 12pt;z-index:20;" onclick = "Error()">Save</Button>
+
+
+
+
+
+
+
+    <button name = "P1Button" value="Exit"
+              style = "border-left: 100px; margin-left: 0px; inline:none; font-family: serif; font-size: 12pt;z-index : 20;">Exit</button>
+     </form>
+    </div>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  transform: scale(3);
+  padding: 10px;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+
+</style>
+
+    <script type="text/javascript">
+
+        function Error(){
+            label = document.getElementsByName("labelButton")
+            console.log(label[0] ) };
+       /* function startGame(){
+            var min=1;
+            var max=10;
+            var random = Math.round(Math.random() * (max - min) + min);
+            document.getElementById('userNameButton').style.display="inline" ;
+            document.getElementById('userNameButton').innerHTML="Guest userID : " + random ;
+            //document.getElementById('nameButton').style.display="none";
+            document.getElementById('helpButton').style.display="none";
+            document.getElementById('myCanvas').style.display="block";
+            document.getElementById('binaryAnnotation').style.display="inline";
+            document.getElementById('drawButton').style.display="inline";
+            document.getElementById('finishButton').style.display="inline";
+
+            //readTextFile("images.csv");
+            //console.log(randomImage());
+            draw({{ Image_to_Annotate }});
+
+
+
+
+
+        }*/
+
+//Global variables////////////////////////////////
+/*var images_labels;
+var selected_image;
+//////////////////////////////////////////////////
+function readTextFile(file)
+{
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        //document.getElementById('myCanvas').value=allText;
+                        //document.write(allText);
+                        images_labels = allText.split('\n');
+                        var lineArr = allText.split('\n');
+
+                    //just to check if it works output lineArr[index] as below
+                        //document.write(allText);
+                        //document.write(lineArr[3]);
+
+
+                    }
+            }
+        }
+
+        rawFile.send(null);
+
+}
+function randomImage(){
+    var min=1;
+    var max=images_labels.length-1;
+    var findUnlabeled = true;
+    var random;
+    var max_iteration = images_labels.length;
+    while (findUnlabeled){
+        random = Math.round(Math.random() * (max - min) + min)-1;
+        if((images_labels[random].split(',').length-1)<2){
+            findUnlabeled = false;
+            selected_image = images_labels[random].split(',')[0];
+            return selected_image;
+        }
+    }
+}
+
+     */
+
+  var img = document.getElementById("load_image");
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  img_width = document.getElementById('myCanvas').width;
+  img_height = document.getElementById('myCanvas').height;
+  ctx.drawImage(img, 0, 0, img_width, img_height);
+
+   console.log(img.src)
+
+
+
+
+</script>

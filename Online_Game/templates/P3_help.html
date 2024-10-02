@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game </h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+        .column {float: left;
+        width: 32%;
+        padding: 0px;
+        border :solid pink;
+        width:300px; font-size:100%; color:blue ;
+        font-size:100%; text-align:center;    }
+
+      .row::after {
+          content: "  ";
+          clear: both;
+          display: table;
+        }
+      .text_over_image{
+          width:300px; font-size:100%; text-align:center; color:blue ;
+      
+      }
+    </style>
+    <ul>
+      <li><a href="{{ url_for('home_func') }}">Home</a></li>
+        <li><a class="active" href="{{ url_for('help_func') }}">Help</a></li>
+        <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+
+
+
+    <div class="white-box">
+    <h2 style = "color : black">Level 3</h2>
+    <p style = "color : black" >
+Cells can die in many ways and understanding the type of cell death is important to study the function of genes and drugs so we can make the best targeted treatments. Our cells have been stained with two different dyes that allow us to distinguish the type of cell death. This specific cell death dye changes appearance from even to spotty when the cell is dying because it recognizes the damage of specific cell structures called lysosomes and accumulates there. So, you simply need to tell us if there are spots or other irregularities in the cell or not. Note, however, that some things can look similar to true spots so don’t be fooled. It is important to consider that the "no object" label should address those images that contain no objects in the center of the image (under the red dot in the main page of the game).
+Here are a few examples and how to classify them.
+
+
+ </p>
+     <div class="row">
+
+ <div class = "column">
+            <div class = "text_over_image">Normal<img  id="Normalimage1" src="{{url_for('static', filename='help_images/Normal_Cytosol1.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+            
+<div class = "column">
+            <div class = "text_over_image">Normal<img id="Normalimage2" src="{{url_for('static', filename='help_images/Normal_Cytosol4.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+            <div class = "column">
+            <div class = "text_over_image">Normal<img id="Normalimage3" src="{{url_for('static', filename='help_images/Normal_Cytosol5.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+ 
+ 
+  </div>
+ 
+ 
+ 
+ <div class="row">
+         <div  class="column">Zoom
+        <div id="Normalresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div  class="column">Zoom
+        <div id="Normalresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div  class="column">Zoom
+        <div id="Normalresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+ 
+  
+
+ <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Blurry<img id="Bimage1" src="{{url_for('static', filename='help_images/Blurry_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Blurry<img id="Bimage2" src="{{url_for('static', filename='help_images/Blurry_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Blurry<img  id="Bimage3"  src="{{url_for('static', filename='help_images/Blurry_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Bresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Bresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Bresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+  <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Black holes<img id="BHimage1" src="{{url_for('static', filename='help_images/Black_holes_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Black holes<img id="BHimage2" src="{{url_for('static', filename='help_images/Black_holes_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Black holes<img  id="BHimage3"  src="{{url_for('static', filename='help_images/Black_holes_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="BHresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="BHresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="BHresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Cut off<img id="Cimage1" src="{{url_for('static', filename='help_images/Cut_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Cut off<img id="Cimage2" src="{{url_for('static', filename='help_images/Cut_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Cut off<img  id="Cimage3"  src="{{url_for('static', filename='help_images/Cut_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Cresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Cresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Cresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+  <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Dots<img id="Dimage1" src="{{url_for('static', filename='help_images/Dots_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Dots<img id="Dimage2" src="{{url_for('static', filename='help_images/Dots_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Dots<img  id="Dimage3"  src="{{url_for('static', filename='help_images/Dots_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Dresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Dresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Dresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+  <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">No Object<img id="NBimage1" src="{{url_for('static', filename='help_images/No_obj_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">No Object<img id="NBimage2" src="{{url_for('static', filename='help_images/No_obj_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">No Object<img  id="NBimage3"  src="{{url_for('static', filename='help_images/No_obj_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="NBresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NBresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NBresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+        
+ 
+ 
+ 
+ 
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Pale<img id="Pimage1" src="{{url_for('static', filename='help_images/Pale_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Pale<img id="Pimage2" src="{{url_for('static', filename='help_images/Pale_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Pale<img  id="Pimage3"  src="{{url_for('static', filename='help_images/Pale_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Presult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Presult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Presult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Small<img id="Simage1" src="{{url_for('static', filename='help_images/Small_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Small<img id="Simage2" src="{{url_for('static', filename='help_images/Small_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Small<img  id="Simage3"  src="{{url_for('static', filename='help_images/Small_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Sresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Sresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Sresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+  <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Other<img id="Oimage1" src="{{url_for('static', filename='help_images/Other_Cytosol1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Other<img id="Oimage2" src="{{url_for('static', filename='help_images/Other_Cytosol2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Other<img  id="Oimage3"  src="{{url_for('static', filename='help_images/Other_Cytosol3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Oresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Oresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Oresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+        <p><a href="{{ url_for('P3_game_func') }}">Start the practice</a> or <a href="{{ url_for('cytosol_game_func') }}">Start the game</a></p>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>
+
+        <style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  /*position: absolute;*/
+  border: 1px solid white;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 295px;
+  height: 295px;
+  }
+        </style>
+
+<script>
+function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /*create lens:*/
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /*insert lens:*/
+  img.parentElement.insertBefore(lens, img);
+  /*calculate the ratio between result DIV and lens:*/
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /*set background properties for the result DIV:*/
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /*and also for touch screens:*/
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    /*calculate the position of the lens:*/
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /*prevent the lens from being positioned outside the image:*/
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /*set the position of the lens:*/
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /*display what the lens "sees":*/
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+<script >
+
+
+
+imageZoom("Normalimage1", "Normalresult1");
+
+imageZoom("Normalimage2", "Normalresult2");
+imageZoom("Normalimage3", "Normalresult3");
+
+
+imageZoom("Bimage1", "Bresult1");
+imageZoom("Bimage2", "Bresult2");
+imageZoom("Bimage3", "Bresult3");
+
+
+imageZoom("BHimage1", "BHresult1");
+imageZoom("BHimage2", "BHresult2");
+imageZoom("BHimage3", "BHresult3");
+
+
+imageZoom("Cimage1", "Cresult1");
+imageZoom("Cimage2", "Cresult2");
+imageZoom("Cimage3", "Cresult3");
+
+imageZoom("Dimage1", "Dresult1");
+imageZoom("Dimage2", "Dresult2");
+imageZoom("Dimage3", "Dresult3");
+
+imageZoom("NBimage1", "NBresult1");
+imageZoom("NBimage2", "NBresult2");
+imageZoom("NBimage3", "NBresult3");
+
+
+imageZoom("Oimage1", "Oresult1");
+imageZoom("Oimage2", "Oresult2");
+imageZoom("Oimage3", "Oresult3");
+
+imageZoom("Pimage1", "Presult1");
+imageZoom("Pimage2", "Presult2");
+imageZoom("Pimage3", "Presult3");
+
+imageZoom("Simage1", "Sresult1");
+imageZoom("Simage2", "Sresult2");
+imageZoom("Simage3", "Sresult3");
+
+</script>

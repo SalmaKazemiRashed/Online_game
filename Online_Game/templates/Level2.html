@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+        .column {
+        float: left;
+        width: 32%;
+        padding: 0px;
+    }
+
+      .row::after {
+          content: "  ";
+          clear: both;
+          display: table;
+        }
+    </style>
+    <ul>
+      <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+      <li><a href="{{ url_for('help_func') }}">Help</a></li>
+      <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+
+
+
+    <div class="white-box">
+    <h2 style = "color : black">Level 2: Normal or strange nucleus (easy)</h2>
+    <p style = "color : black" >
+The nucleus is the part of the cell in which the genetic information is stored and in our images we marked it with a specific dye. In cells that are stressed or dying the nucleus often changes its appearance and by deciding if a nucleus looks normal or funny we can find out if a treatment harms a cell. It will be easy for you to spot the difference.
+See <a href="{{ url_for('l2_help_func') }}">here</a> for examples on how to classify in level 2 and start <a href="{{ url_for('P2_game_func') }}">Practicing</a>  or start the <a href="{{ url_for('nuclei_game_func') }}">game</a> directly</p>.
+
+
+
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>
+
+        <style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  /*position: absolute;*/
+  border: 1px solid white;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 150px;
+  height: 150px;
+}
+        </style>

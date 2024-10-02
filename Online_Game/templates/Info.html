@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    <!--other positioning attributes-->
+    }
+        .cat-images {
+        padding-left: 30px;
+        padding-top: 10px;
+        width : 70px;
+    <!--other positioning attributes-->
+    }
+    </style>
+    <ul>
+      <li><a  href="{{ url_for('home_func') }}">Home</a></li>
+        <li><a href="{{ url_for('help_func') }}">Help</a></li>
+        <li><a class="active" href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+    <div class="white-box">
+    <h2 style = "color : black">Building an artificial intelligence system for interpreting images of cells</h2>
+    <p style = "color : black" >
+
+<p>Microscopy is one of the most common techniques used in medical and other life sciences research because it allows us to directly observe processes happening in the cells, the building blocks which make up the body of all organisms. In the past, researchers usually took only a few images which were simply inspected by eye. However, we and a few other groups use an advanced robotic microscope technique, called high-content imaging, with which we can take millions of images. This allows us to test the effect of thousands of genes or drugs on our cells in one study which can greatly speed up the discovery of new medical treatments or biological signalling pathways. There is one problem though: it is simply impossible to manually inspect millions of images.
+</p>
+<p>
+We are therefore developing an artificial intelligence system that can interpret the images for us and for example decide if and how a cancer cell is dying from a treatment. Such an artificial intelligence system needs to be trained on thousands of high-quality images to ensure it operates as we want it to. This is where you come in! We need your help in detecting images of poor quality and in classifying the appearance of cells and this is why we set up this game. Later, the results of our study and the data you generate will be made available to the entire research community so that many studies can benefit from the data you help generate. Because the dyes we use to label our cells give information about many things besides cell death (e.g. cell size and shape) the data you create can be reused to find out many other things about cells in addition to cell death.</p>
+</p>
+
+
+    </div>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>

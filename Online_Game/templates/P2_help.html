@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game </h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+       .column {
+        float: left;
+        width: 32%;
+        padding: 0px;
+        border :solid pink;
+        width:300px; font-size:100%; color:blue ;
+        font-size:100%; text-align:center;    }
+
+      .row::after {
+          content: "  ";
+          clear: both;
+          display: table;
+        }
+      .text_over_image{
+          width:300px; font-size:100%; text-align:center; color:blue ;}
+    </style>
+    <ul>
+      <li><a  href="{{ url_for('home_func') }}">Home</a></li>
+        <li><a class="active" href="{{ url_for('help_func') }}">Help</a></li>
+        <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+
+
+
+    <div class="white-box">
+    <h2 style = "color : black">Level 2</h2>
+    <p style = "color : black" >
+The nucleus is the part of the cell in which the genetic information (DNA) is stored and in our images we marked it with a specific dye. In cells that are stressed or dying the nucleus often changes its appearance. You are tasked with deciding if a nucleus looks normal or strange so we can find out if a treatment harms a cell.
+Here are a few examples and how to classify them. It is important to consider that the "no object" label should address those images that contain no objects in the center of the image (under the red dot in the main page of the game).
+
+ </p>
+  
+   <div class="row">
+
+ <div class = "column">
+            <div class = "text_over_image">Normal<img id="Normalimage1" src="{{url_for('static', filename='help_images/Normal_Nuclei1.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+            
+<div class = "column">
+            <div class = "text_over_image">Normal<img  id="Normalimage2" src="{{url_for('static', filename='help_images/Normal_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+            <div class = "column">
+            <div class = "text_over_image">Normal<img id="Normalimage3" src="{{url_for('static', filename='help_images/Normal_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+ 
+ 
+  </div>
+  
+  <div class="row">
+         <div class="column">Zoom
+        <div id="Normalresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Normalresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Normalresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+  
+  
+  
+
+ 
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Blurry<img id="Bimage1" src="{{url_for('static', filename='help_images/Blurry_Nuclei1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Blurry<img id="Bimage2" src="{{url_for('static', filename='help_images/Blurry_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Blurry<img  id="Bimage3"  src="{{url_for('static', filename='help_images/Blurry_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Bresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Bresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Bresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+ 
+ 
+ 
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Messed up<img id="Mimage1" src="{{url_for('static', filename='help_images/Messed_Nuclei1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Messed up<img id="Mimage2" src="{{url_for('static', filename='help_images/Messed_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Messed up<img  id="Mimage3"  src="{{url_for('static', filename='help_images/Messed_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Mresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Mresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Mresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+
+ <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Micro nuclei<img id="MNimage1" src="{{url_for('static', filename='help_images/Micro_Nuclei1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Micro nuclei<img id="MNimage2" src="{{url_for('static', filename='help_images/Micro_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Micro nuclei<img  id="MNimage3"  src="{{url_for('static', filename='help_images/Micro_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="MNresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="MNresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="MNresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+
+ <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Micro nuclei<img id="MNimage4" src="{{url_for('static', filename='help_images/Micro_Nuclei4.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">No Object<img id="NBimage1" src="{{url_for('static', filename='help_images/No_Obj_Nuclei1.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">No Object<img  id="NBimage2"  src="{{url_for('static', filename='help_images/No_Obj_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="MNresult4" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NBresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NBresult2" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+
+
+
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Not oval nuclei<img id="NOimage1" src="{{url_for('static', filename='help_images/Notoval_Nuclei1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Not oval nuclei<img id="NOimage2" src="{{url_for('static', filename='help_images/Notoval_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Not oval nuclei<img  id="NOimage3"  src="{{url_for('static', filename='help_images/Notoval_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="NOresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NOresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="NOresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+
+
+         <div class="row">
+             <div class = "column">
+                 <div class = "text_over_image">Other<img id="Oimage1" src="{{url_for('static', filename='help_images/Other_Nuclei1.png')}}"alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em; " /></div></div>
+
+        <div class = "column"><div class = "text_over_image">Other<img id="Oimage2" src="{{url_for('static', filename='help_images/Other_Nuclei2.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;" /></div></div>
+           
+            <div class = "column">
+                <div class = "text_over_image">Other<img  id="Oimage3"  src="{{url_for('static', filename='help_images/Other_Nuclei3.png')}}" alt="alternate text" width="245px" height="245px" style="padding-bottom:0.0em;padding-top: 0.0em" /></div>
+             </div>
+ </div>
+        <div class="row">
+         <div class="column">Zoom
+        <div id="Oresult1" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Oresult2" class="img-zoom-result"></div>
+        </div>
+
+             <div class="column">Zoom
+        <div id="Oresult3" class="img-zoom-result"></div>
+        </div>
+
+ </div>
+
+
+
+       <p><a href="{{ url_for('P2_game_func') }}">Start the practice</a> or <a href="{{ url_for('nuclei_game_func') }}">Start the game</a></p>
+        
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>
+
+        <style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  /*position: absolute;*/
+  border: 1px solid white;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 295px;
+  height: 295px;
+}
+        </style>
+
+<script>
+function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /*create lens:*/
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /*insert lens:*/
+  img.parentElement.insertBefore(lens, img);
+  /*calculate the ratio between result DIV and lens:*/
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /*set background properties for the result DIV:*/
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /*and also for touch screens:*/
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    /*calculate the position of the lens:*/
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /*prevent the lens from being positioned outside the image:*/
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /*set the position of the lens:*/
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /*display what the lens "sees":*/
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+<script >
+
+
+
+imageZoom("Normalimage1", "Normalresult1");
+
+imageZoom("Normalimage2", "Normalresult2");
+imageZoom("Normalimage3", "Normalresult3");
+
+
+imageZoom("Bimage1", "Bresult1");
+imageZoom("Bimage2", "Bresult2");
+imageZoom("Bimage3", "Bresult3");
+
+
+imageZoom("Mimage1", "Mresult1");
+imageZoom("Mimage2", "Mresult2");
+imageZoom("Mimage3", "Mresult3");
+
+imageZoom("MNimage1", "MNresult1");
+imageZoom("MNimage2", "MNresult2");
+imageZoom("MNimage3", "MNresult3");
+
+imageZoom("MNimage4", "MNresult4");
+imageZoom("NBimage1", "NBresult1");
+imageZoom("NBimage2", "NBresult2");
+
+imageZoom("NOimage1", "NOresult1");
+imageZoom("NOimage2", "NOresult2");
+imageZoom("NOimage3", "NOresult3");
+
+imageZoom("Oimage1", "Oresult1");
+imageZoom("Oimage2", "Oresult2");
+imageZoom("Oimage3", "Oresult3");
+
+
+
+
+</script>

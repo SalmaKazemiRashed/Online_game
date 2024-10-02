@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game </h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    <!--other positioning attributes-->
+    }
+        .cat-images {
+        padding-left: 30px;
+        padding-top: 10px;
+        width : 70px;
+    <!--other positioning attributes-->
+    }
+    </style>
+    <ul>
+      <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+      <li><a href="{{ url_for('help_func') }}">Help</a></li>
+      <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+    <div class="white-box">
+        <h2>Practice Starts</h2>
+
+
+
+
+     <form method="post">
+      <Button name = "P4Button" type="submit" id="P4Button" value='Start'
+               style = "display:inline; font-family: serif; font-size: 12pt;z-index:20;" >Start</Button>
+
+
+
+
+
+            <p><a  href="{{ url_for('help_func') }}">No, help please</a></p>
+
+
+     </form>
+    </div>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>

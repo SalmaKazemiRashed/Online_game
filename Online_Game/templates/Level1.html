@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+        .column {
+        float: left;
+        width: 32%;
+        padding: 0px;
+    }
+
+      .row::after {
+          content: "  ";
+          clear: both;
+          display: table;
+        }
+    </style>
+    <ul>
+      <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+      <li><a href="{{ url_for('help_func') }}">Help</a></li>
+      <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+
+
+
+    <div class="white-box">
+    <h2 style = "color : black">Level 1: Good image or bad image</h2>
+    <p style = "color : black" >
+Here you help us detect images of poor quality, e.g. which are out of focus or which contain dust particles which sometimes sneak into the microscope. These images need to be sorted out because they cannot give us meaningful information about the cells. Spotting these flaws is easy for a human but we need thousands of images to teach our artificial intelligence system because computers are less clever. So, give it a try!
+See <a href="{{ url_for('l1_help_func') }}">here</a> for examples on how to classify in level 1 and start   <a href="{{ url_for('P1_game_func') }}">Practicing</a> or start the <a href="{{ url_for('quality_game_func') }}">game</a> directly.</p>
+
+
+
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>
+
+        <style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  /*position: absolute;*/
+  border: 1px solid white;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 150px;
+  height: 150px;
+}
+        </style>

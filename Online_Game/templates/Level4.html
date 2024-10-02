@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+        .column {
+        float: left;
+        width: 32%;
+        padding: 0px;
+    }
+
+      .row::after {
+          content: "  ";
+          clear: both;
+          display: table;
+        }
+    </style>
+    <ul>
+ <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+  <li><a href="{{ url_for('help_func') }}">Help</a></li>
+  <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+
+
+
+    <div class="white-box">
+    <h2 style = "color : black">Level 4: Diffuse or not (hard)</h2>
+    <p style = "color : black" >
+Cells can die in many ways and understanding the type of cell death is important to study the function of genes and drugs so we can make the best targeted treatments. Our cells have been stained with two different dyes that allow us to distinguish the type of cell death. One of the dyes changes appearance from even to spotty when the cell is dying because the dye recognizes the damage of specific cell structures called lysosomes (read more here). So, in level 3, you simply need to tell us if there are spots in the cell or not. The second dye normally is confined to specific cell compartments called mitochondria (read more <a href="{{ url_for('cell_info_func') }}">here</a>) but leaks out when they have been damaged. So, in level 4, you need to decide if some of the dye has leaked and is diffusely spread out in the cell.
+See <a href="{{ url_for('l4_help_func') }}">here</a> for examples on how to classify in level 4 and start <a href="{{ url_for('P4_game_func') }}">Practicing</a>  or start the <a href="{{ url_for('mitochondria_game_func') }}">game</a> directly. </p>
+
+
+
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>
+
+        <style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  /*position: absolute;*/
+  border: 1px solid white;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 150px;
+  height: 150px;
+}
+        </style>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>First Page</title>
+    </head>
+<body id = "background"  style = "background-image: url('/static/img/secondbackgrnd.png')">
+    <h1 style = "color : antiquewhite">Cell Hunter Game</h1>
+
+    <!-- Here is the white-box css file -->
+    <style>
+    .white-box {
+        background-color: white;
+        color: black;
+        position:absolute;
+        left: 180px;
+        top:83px;
+        right: 20px;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    <!--other positioning attributes-->
+    }
+        .cat-images {
+        padding-left: 30px;
+        padding-top: 10px;
+        width : 70px;
+    <!--other positioning attributes-->
+    }
+    </style>
+    <ul>
+      <li><a class="active" href="{{ url_for('home_func') }}">Home</a></li>
+        <li><a href="{{ url_for('l1_help_func') }}">Help</a></li>
+        <li><a href="{{ url_for('us_info_func') }}">Info</a></li>
+</ul>
+    <div class="white-box">
+    <h2 style = "color : black">Who are we?</h2>
+    <p style = "color : black" >
+
+
+The Cell Death and Lysosomes Group is part of Lund University in Sweden. As the name suggests we are interested in all things related to cell death. Our main research goal is understanding this fundamental process and its role in different diseases and developing therapies that can fix cell death when it is broken. Besides this, our group is passionate about bringing science out to the general public and in supporting the vibrant artificial intelligence community in Lund.</p>
+
+
+
+<p>You can also check out our lab website <a href="http://aitslab.org/">(www.aitslab.org)</a> and university research profile.</p>
+
+<p style = "color : navy; font-size:14" >Sonja Aits</p>
+<p>PhD in Biomedicine and Group Leader
+Expert in cell death, lysosomes, robotic microscopy and artificial intelligence applications for medical research. Read more about me on my university profile <a href="https://portal.research.lu.se/portal/en/persons/sonja-aits(fe9b311a-f6fa-4306-a9bb-c84321926e03)/publications.html#0">page</a> or LinkedIn <a href="https://www.linkedin.com/in/sonjaaits/">page</a>.</p>
+
+
+
+<p style = "color : navy; font-size:14" >Salma Kazemi Rashed</p>
+<p>PhD student, MSc in Bioinformatics, MSc in Electrical Engineering-Telecommunications
+Proficient in programming and artificial intelligence systems
+</p>
+
+<p style = "color : navy; font-size:14" >Jong Chan Lim</p>
+<p>Master student in Bioinformatics, BSc in Biochemistry and Cell Biology
+Combines skills in biology with programming expertise
+</p>
+
+<p style = "color : navy; font-size:14" > Malou Arvidsson</p>
+<p>Master student in Bioinformatics, BSc in Mathematics,
+Combines skills in programming with mathematical expertise</p>
+   </p>
+
+
+    <p>
+We also have many wonderful collaborators who work with us on this highly interdisciplinary research:</p>
+<p>Main collaborators for this project are</p>
+<p>Karl Åström, Mathematics, Lund University</p>
+<p>Pierre Nugues, Computer Sciences, Lund University</p>
+<p>Johan Frid, Humanities Lab, Lund University</p>
+<p>Ricky Johnstone, Peter MacCallum Cancer Centre</p>
+<p>Kaylene Simpson, Peter MacCallum Cancer Centre</p>
+<p>National Bioinformatics Infrastructure Sweden</p>
+<p>Our group is also part of many national and international research networks through which the research community shares knowledge and tools. Read more here:</p>
+
+<p>Our work would be impossible with out the generous financial support from:</p>
+Swedish Research Council, Royal Physiographic Society, Segerfalk Foundation</p>
+
+<p>If you want to support our work as a collaborator, donor or in any other role or if you are interested in learning more about our research, please don’t hesitate to contact us: <a href = "http://aitslab.org/">sonja.aits@med.lu.se</a></p>
+    </p>
+
+    </div>
+
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: whitesmoke;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+</style>

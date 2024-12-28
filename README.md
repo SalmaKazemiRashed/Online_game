@@ -12,8 +12,8 @@ PI: Sonja Aits
 
 To run the tool on a personal system, Conda environment needs to be created and launched.
 
-1. 
-bash'''
+1.Create conda environment
+2. '''bash
 conda create -n YourENV python=3.6
 
 pip install flask

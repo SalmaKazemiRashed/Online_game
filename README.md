@@ -7,8 +7,6 @@ by Salma Kazemi Rashed
 
 PhD studnt in Cell Death, Lysosomes and AI Group
 
-PI: Sonja Aits
-
 
 To run the tool on a personal system, Conda environment needs to be created and launched.
 

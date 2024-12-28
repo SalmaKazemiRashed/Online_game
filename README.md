@@ -13,32 +13,32 @@ PI: Sonja Aits
 To run the tool on a personal system, Conda environment needs to be created and launched.
 
 1.Create conda environment
-2. '''bash
+```bash
 conda create -n YourENV python=3.6
 
 pip install flask
 
 pip install mysql-connector  ##This is for Cloud version
-'''
+```
 
 or 
-bash'''
+```bash
 pip install -r requirements.txt #using pip
-'''
+```
+
 or
 
-bash'''
+```bash
 conda create --name <env_name> --file requirements.txt
-'''
-###########################################################################
+```
 
 2. Run the code
 
 The next step is running main.py function:
 
-bash'''
+```bash
 python main.py
-'''
+```
 open the Localhost http://127.0.0.1:8080/ on your browser.
 
 Afterward, the start page can be accessed via any web browser.

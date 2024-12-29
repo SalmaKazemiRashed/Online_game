@@ -5,7 +5,7 @@ This project is created at 2019.
 
 by Salma Kazemi Rashed
 
-PhD studnt in Cell Death, Lysosomes and AI Group
+PhD student in Cell Death, Lysosomes and AI Group, Lund university.
 
 
 To run the tool on a personal system, Conda environment needs to be created and launched.
@@ -48,4 +48,4 @@ To familiarize users with the game's features and prepare them for annotating re
 
 The laymen annotation handling is Annotations directory.
 
-Online_Game is the offline version and it has only 100 images from each channel. The main 500 images version is on Lunarc.
+Online_Game is the offline version and it has only 100 images from each channel. The main 500 images version is on Lunarc storage space.
